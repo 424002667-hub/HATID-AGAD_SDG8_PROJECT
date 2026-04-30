@@ -1,0 +1,12 @@
+C:\HATID-AGAD_SDG8_PROJECT\HatidApp\HatidApp\obj\Debug\HatidApp.vbproj.AssemblyReference.cache
+C:\HATID-AGAD_SDG8_PROJECT\HatidApp\HatidApp\obj\Debug\HatidApp.FrmLogin.resources
+C:\HATID-AGAD_SDG8_PROJECT\HatidApp\HatidApp\obj\Debug\HatidApp.Resources.resources
+C:\HATID-AGAD_SDG8_PROJECT\HatidApp\HatidApp\obj\Debug\HatidApp.vbproj.GenerateResource.cache
+C:\HATID-AGAD_SDG8_PROJECT\HatidApp\HatidApp\obj\Debug\HatidApp.vbproj.CoreCompileInputs.cache
+C:\HATID-AGAD_SDG8_PROJECT\HatidApp\HatidApp\bin\Debug\HatidApp.exe.config
+C:\HATID-AGAD_SDG8_PROJECT\HatidApp\HatidApp\bin\Debug\HatidApp.exe
+C:\HATID-AGAD_SDG8_PROJECT\HatidApp\HatidApp\bin\Debug\HatidApp.pdb
+C:\HATID-AGAD_SDG8_PROJECT\HatidApp\HatidApp\bin\Debug\HatidApp.xml
+C:\HATID-AGAD_SDG8_PROJECT\HatidApp\HatidApp\obj\Debug\HatidApp.exe
+C:\HATID-AGAD_SDG8_PROJECT\HatidApp\HatidApp\obj\Debug\HatidApp.xml
+C:\HATID-AGAD_SDG8_PROJECT\HatidApp\HatidApp\obj\Debug\HatidApp.pdb
