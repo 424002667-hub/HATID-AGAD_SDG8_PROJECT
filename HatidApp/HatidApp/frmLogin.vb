@@ -34,9 +34,7 @@
     Private Sub btnLogin_Click(sender As Object, e As EventArgs) Handles btnLogin.Click
         If txtUsername.Text = "admin" And txtPassword.Text = "ntc123" Then
             MsgBox("Login Successful! Welcome to AttendEase.", MsgBoxStyle.Information, "Success")
-            ' This is where you would show your Main Menu form later
-            ' Me.Hide()
-            ' frmMain.Show()
+
         Else
             MsgBox("Invalid Username or Password. Please try again.", MsgBoxStyle.Critical, "Access Denied")
             txtUsername.Clear()
@@ -47,5 +45,9 @@
 
     Private Sub txtUsername_TextChanged(sender As Object, e As EventArgs) Handles txtUsername.TextChanged
 
+    End Sub
+
+    Private Sub Label2_Click(sender As Object, e As EventArgs) Handles Label2.Click
+        Application.Exit()
     End Sub
 End Class
