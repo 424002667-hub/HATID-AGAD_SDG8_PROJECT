@@ -1,1 +1,4 @@
 ﻿/HatidApp/.vs/HatidApp.slnx
+# Ignore Visual Studio temporary files
+.vs/
+*.vsidx

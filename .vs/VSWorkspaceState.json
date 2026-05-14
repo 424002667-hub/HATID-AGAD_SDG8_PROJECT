@@ -1,9 +1,11 @@
 {
   "ExpandedNodes": [
     "",
-    "\\HatidApp",
-    "\\HatidApp\\HatidApp"
+    "\\CODE",
+    "\\CODE\\HatidApp",
+    "\\CODE\\HatidApp\\HatidApp",
+    "\\DATABASE"
   ],
-  "SelectedNode": "\\HatidApp\\HatidApp\\frmLogin.Designer.vb",
+  "SelectedNode": "\\CODE\\HatidApp\\HatidApp\\FrmLogin.vb",
   "PreviewInSolutionExplorer": false
 }
