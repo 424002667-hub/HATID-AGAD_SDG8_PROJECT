@@ -5,45 +5,65 @@ Public Class FrmRegister
     Dim connStr As String = "Data Source=(LocalDB)\MSSQLLocalDB;AttachDbFilename=|DataDirectory|\HatidDB.mdf;Integrated Security=True"
 
     Private Sub FrmRegister_Load(sender As Object, e As EventArgs) Handles MyBase.Load
-        ' This ensures the password cannot be seen (shows dots only)
+        ' Protects the password by showing dots
         txtPassword.UseSystemPasswordChar = True
     End Sub
 
     Private Sub btnRegister_Click(sender As Object, e As EventArgs) Handles btnRegister.Click
-        ' 1. Basic Validation
-        If txtStudentID.Text = "" Or txtPassword.Text = "" Or txtFullName.Text = "" Then
-            MessageBox.Show("Please fill in all fields.")
-            Return
+        ' 1. Validation: Ensure no fields are empty
+        If txtStudentID.Text = "" Or txtFullName.Text = "" Or txtPassword.Text = "" Then
+            MessageBox.Show("Please fill in all fields.", "Validation Error", MessageBoxButtons.OK, MessageBoxIcon.Warning)
+            Exit Sub
         End If
 
+        ' 2. The User Agreement Pop-up
+        Dim agreementMessage As String = "HATID-AGAD USER AGREEMENT" & vbCrLf & vbCrLf &
+            "By clicking YES, you agree to the following:" & vbCrLf &
+            "- Your Student ID and Name will be stored in our database." & vbCrLf &
+            "- This account is locked to this specific device (Device Binding)." & vbCrLf &
+            "- You are responsible for all deliveries made under this ID." & vbCrLf &
+            "- Any food tampering will lead to an immediate ban and NTC disciplinary action." & vbCrLf & vbCrLf &
+            "Do you accept these terms?"
+
+        Dim result As DialogResult = MessageBox.Show(agreementMessage, "Data Privacy & Terms", MessageBoxButtons.YesNo, MessageBoxIcon.Information)
+
+        ' 3. Only proceed to database logic if they click YES
+        If result = DialogResult.Yes Then
+            SaveUserToDatabase()
+        Else
+            MessageBox.Show("Registration cancelled. You must agree to the terms to use Hatid-Agad.", "Consent Required", MessageBoxButtons.OK, MessageBoxIcon.Stop)
+        End If
+    End Sub
+
+    ' Separated logic for better organization and to avoid errors
+    Private Sub SaveUserToDatabase()
         Try
             Using conn As New SqlConnection(connStr)
                 conn.Open()
 
-                ' 2. Check if Student ID already exists in your User table
+                ' Check if Student ID already exists
                 Dim checkCmd As New SqlCommand("SELECT COUNT(*) FROM [User] WHERE StudentID = @id", conn)
                 checkCmd.Parameters.AddWithValue("@id", txtStudentID.Text)
 
                 If CInt(checkCmd.ExecuteScalar()) > 0 Then
-                    MessageBox.Show("This Student ID is already registered.")
+                    MessageBox.Show("This Student ID is already registered.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error)
                 Else
-                    ' 3. Insert new student (Role removed to match your database)
+                    ' Insert new student record
                     Dim insertCmd As New SqlCommand("INSERT INTO [User] (StudentID, Password, FullName) VALUES (@id, @pass, @name)", conn)
                     insertCmd.Parameters.AddWithValue("@id", txtStudentID.Text)
                     insertCmd.Parameters.AddWithValue("@pass", txtPassword.Text)
                     insertCmd.Parameters.AddWithValue("@name", txtFullName.Text)
 
                     insertCmd.ExecuteNonQuery()
-                    MessageBox.Show("Registration Successful!")
+                    MessageBox.Show("Registration Successful!", "Success", MessageBoxButtons.OK, MessageBoxIcon.Information)
 
-                    ' 4. Hide current form and show Login
+                    ' Switch to Login form
                     Me.Hide()
                     FrmLogin.Show()
                 End If
             End Using
         Catch ex As Exception
-            ' This will catch any remaining issues with table or column names
-            MessageBox.Show("Database Error: " & ex.Message)
+            MessageBox.Show("Database Error: " & ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error)
         End Try
     End Sub
 
@@ -51,17 +71,4 @@ Public Class FrmRegister
         Me.Hide()
         FrmLogin.Show()
     End Sub
-
-    ' Empty events kept to prevent designer errors
-    Private Sub txtFullName_TextChanged(sender As Object, e As EventArgs) Handles txtFullName.TextChanged
-    End Sub
-    Private Sub lblStudentID_Click(sender As Object, e As EventArgs) Handles lblStudentID.Click
-    End Sub
-    Private Sub txtStudentID_TextChanged(sender As Object, e As EventArgs) Handles txtStudentID.TextChanged
-    End Sub
-    Private Sub txtPassword_TextChanged(sender As Object, e As EventArgs) Handles txtPassword.TextChanged
-    End Sub
-    Private Sub lblPassword_Click(sender As Object, e As EventArgs) Handles lblPassword.Click
-    End Sub
-
 End Class
