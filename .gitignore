@@ -1,4 +1,6 @@
-﻿/HatidApp/.vs/HatidApp.slnx
-# Ignore Visual Studio temporary files
+﻿[Bb]in/
+[Oo]bj/
+*.ldf
+*.user
 .vs/
-*.vsidx
+/CODE/HatidApp/HatidApp/bin/Debug/HatidDB.mdf
