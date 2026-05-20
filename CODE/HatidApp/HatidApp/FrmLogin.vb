@@ -49,14 +49,27 @@ Public Class FrmLogin
             Dim count As Integer = Convert.ToInt32(cmd.ExecuteScalar())
 
             If count > 0 Then
-                MessageBox.Show("Login Successful! Welcome to Hatid-Agad.")
+                MessageBox.Show("Login Successful! Welcome to Hatid-Agad.", "Success", MessageBoxButtons.OK, MessageBoxIcon.Information)
+
+                ' --- DASHBOARD NAVIGATION CODE STARTS HERE ---
+                Dim dash As New FrmDashboard()
+
+                ' Pass the typed username/ID to the dashboard property
+                dash.LoggedInUser = txtUsername.Text
+
+                ' Show the dashboard form
+                dash.Show()
+
+                ' Hide this login form so it doesn't clutter the screen
+                Me.Hide()
+                ' --- DASHBOARD NAVIGATION CODE ENDS HERE ---
 
             Else
-                MessageBox.Show("Invalid Student ID or Password. Please try again.")
+                MessageBox.Show("Invalid Student ID or Password. Please try again.", "Login Failed", MessageBoxButtons.OK, MessageBoxIcon.Warning)
             End If
 
         Catch ex As Exception
-            MessageBox.Show("Error: " & ex.Message)
+            MessageBox.Show("Error: " & ex.Message, "Database Error", MessageBoxButtons.OK, MessageBoxIcon.Error)
         Finally
             conn.Close()
         End Try
@@ -74,5 +87,9 @@ Public Class FrmLogin
     Private Sub btnGoToRegister_Click(sender As Object, e As EventArgs) Handles btnGoToRegister.Click
         Me.Hide()
         FrmRegister.Show()
+    End Sub
+
+    Private Sub FrmLogin_Load(sender As Object, e As EventArgs) Handles MyBase.Load
+
     End Sub
 End Class

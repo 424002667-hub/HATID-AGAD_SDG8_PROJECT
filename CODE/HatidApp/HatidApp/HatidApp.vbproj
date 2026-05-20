@@ -195,6 +195,12 @@
     <Import Include="System.Threading.Tasks" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="FrmDashboard.Designer.vb">
+      <DependentUpon>FrmDashboard.vb</DependentUpon>
+    </Compile>
+    <Compile Include="FrmDashboard.vb">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Include="FrmLogin.vb">
       <SubType>Form</SubType>
     </Compile>
@@ -223,8 +229,17 @@
       <DependentUpon>Settings.settings</DependentUpon>
       <DesignTimeSharedInput>True</DesignTimeSharedInput>
     </Compile>
+    <Compile Include="UC_Users.Designer.vb">
+      <DependentUpon>UC_Users.vb</DependentUpon>
+    </Compile>
+    <Compile Include="UC_Users.vb">
+      <SubType>UserControl</SubType>
+    </Compile>
   </ItemGroup>
   <ItemGroup>
+    <EmbeddedResource Include="FrmDashboard.resx">
+      <DependentUpon>FrmDashboard.vb</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="FrmLogin.resx">
       <DependentUpon>FrmLogin.vb</DependentUpon>
     </EmbeddedResource>
@@ -236,6 +251,9 @@
       <LastGenOutput>Resources.Designer.vb</LastGenOutput>
       <CustomToolNamespace>My.Resources</CustomToolNamespace>
       <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UC_Users.resx">
+      <DependentUpon>UC_Users.vb</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <ItemGroup>
@@ -253,10 +271,10 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="HatidDB.mdf">
-      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
     <Content Include="HatidDB_log.ldf">
-      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
       <DependentUpon>HatidDB.mdf</DependentUpon>
     </Content>
   </ItemGroup>
