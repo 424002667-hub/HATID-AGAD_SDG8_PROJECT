@@ -25,7 +25,7 @@ Partial Class FrmLogin
         Me.Label2 = New System.Windows.Forms.Label()
         Me.Label3 = New System.Windows.Forms.Label()
         Me.Label4 = New System.Windows.Forms.Label()
-        Me.txtUsername = New System.Windows.Forms.TextBox()
+        Me.txtStudentID = New System.Windows.Forms.TextBox()
         Me.txtPassword = New System.Windows.Forms.TextBox()
         Me.Label5 = New System.Windows.Forms.Label()
         Me.Label1 = New System.Windows.Forms.Label()
@@ -66,21 +66,21 @@ Partial Class FrmLogin
         Me.Label4.Location = New System.Drawing.Point(88, 213)
         Me.Label4.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
         Me.Label4.Name = "Label4"
-        Me.Label4.Size = New System.Drawing.Size(121, 28)
+        Me.Label4.Size = New System.Drawing.Size(130, 28)
         Me.Label4.TabIndex = 3
-        Me.Label4.Text = "USERNAME"
+        Me.Label4.Text = "STUDENT ID"
         '
-        'txtUsername
+        'txtStudentID
         '
-        Me.txtUsername.BackColor = System.Drawing.Color.White
-        Me.txtUsername.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
-        Me.txtUsername.Font = New System.Drawing.Font("Segoe UI", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.txtUsername.ForeColor = System.Drawing.Color.Black
-        Me.txtUsername.Location = New System.Drawing.Point(93, 242)
-        Me.txtUsername.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
-        Me.txtUsername.Name = "txtUsername"
-        Me.txtUsername.Size = New System.Drawing.Size(339, 34)
-        Me.txtUsername.TabIndex = 4
+        Me.txtStudentID.BackColor = System.Drawing.Color.White
+        Me.txtStudentID.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
+        Me.txtStudentID.Font = New System.Drawing.Font("Segoe UI", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.txtStudentID.ForeColor = System.Drawing.Color.Black
+        Me.txtStudentID.Location = New System.Drawing.Point(93, 242)
+        Me.txtStudentID.Margin = New System.Windows.Forms.Padding(4)
+        Me.txtStudentID.Name = "txtStudentID"
+        Me.txtStudentID.Size = New System.Drawing.Size(339, 34)
+        Me.txtStudentID.TabIndex = 4
         '
         'txtPassword
         '
@@ -89,7 +89,7 @@ Partial Class FrmLogin
         Me.txtPassword.Font = New System.Drawing.Font("Segoe UI", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.txtPassword.ForeColor = System.Drawing.Color.Black
         Me.txtPassword.Location = New System.Drawing.Point(93, 345)
-        Me.txtPassword.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
+        Me.txtPassword.Margin = New System.Windows.Forms.Padding(4)
         Me.txtPassword.Name = "txtPassword"
         Me.txtPassword.Size = New System.Drawing.Size(339, 34)
         Me.txtPassword.TabIndex = 6
@@ -127,7 +127,7 @@ Partial Class FrmLogin
         Me.btnLogin.Font = New System.Drawing.Font("Segoe UI", 12.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.btnLogin.ForeColor = System.Drawing.Color.Gray
         Me.btnLogin.Location = New System.Drawing.Point(133, 426)
-        Me.btnLogin.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
+        Me.btnLogin.Margin = New System.Windows.Forms.Padding(4)
         Me.btnLogin.Name = "btnLogin"
         Me.btnLogin.Size = New System.Drawing.Size(267, 55)
         Me.btnLogin.TabIndex = 7
@@ -141,8 +141,8 @@ Partial Class FrmLogin
         Me.btnGoToRegister.FlatStyle = System.Windows.Forms.FlatStyle.Flat
         Me.btnGoToRegister.Font = New System.Drawing.Font("Segoe UI", 12.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.btnGoToRegister.ForeColor = System.Drawing.Color.Gray
-        Me.btnGoToRegister.Location = New System.Drawing.Point(171, 513)
-        Me.btnGoToRegister.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
+        Me.btnGoToRegister.Location = New System.Drawing.Point(171, 510)
+        Me.btnGoToRegister.Margin = New System.Windows.Forms.Padding(4)
         Me.btnGoToRegister.Name = "btnGoToRegister"
         Me.btnGoToRegister.Size = New System.Drawing.Size(188, 44)
         Me.btnGoToRegister.TabIndex = 8
@@ -159,13 +159,13 @@ Partial Class FrmLogin
         Me.Controls.Add(Me.btnLogin)
         Me.Controls.Add(Me.txtPassword)
         Me.Controls.Add(Me.Label5)
-        Me.Controls.Add(Me.txtUsername)
+        Me.Controls.Add(Me.txtStudentID)
         Me.Controls.Add(Me.Label4)
         Me.Controls.Add(Me.Label3)
         Me.Controls.Add(Me.Label2)
         Me.Controls.Add(Me.Label1)
         Me.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None
-        Me.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
+        Me.Margin = New System.Windows.Forms.Padding(4)
         Me.Name = "FrmLogin"
         Me.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen
         Me.Text = "Form1"
@@ -176,7 +176,7 @@ Partial Class FrmLogin
     Friend WithEvents Label2 As Label
     Friend WithEvents Label3 As Label
     Friend WithEvents Label4 As Label
-    Friend WithEvents txtUsername As TextBox
+    Friend WithEvents txtStudentID As TextBox
     Friend WithEvents txtPassword As TextBox
     Friend WithEvents Label5 As Label
     Friend WithEvents Label1 As Label

@@ -229,6 +229,30 @@
       <DependentUpon>Settings.settings</DependentUpon>
       <DesignTimeSharedInput>True</DesignTimeSharedInput>
     </Compile>
+    <Compile Include="UC_DeliveryPool.Designer.vb">
+      <DependentUpon>UC_DeliveryPool.vb</DependentUpon>
+    </Compile>
+    <Compile Include="UC_DeliveryPool.vb">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UC_Marketplace.Designer.vb">
+      <DependentUpon>UC_Marketplace.vb</DependentUpon>
+    </Compile>
+    <Compile Include="UC_Marketplace.vb">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UC_OrderDetails.Designer.vb">
+      <DependentUpon>UC_OrderDetails.vb</DependentUpon>
+    </Compile>
+    <Compile Include="UC_OrderDetails.vb">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UC_RunnerPool.Designer.vb">
+      <DependentUpon>UC_RunnerPool.vb</DependentUpon>
+    </Compile>
+    <Compile Include="UC_RunnerPool.vb">
+      <SubType>UserControl</SubType>
+    </Compile>
     <Compile Include="UC_Users.Designer.vb">
       <DependentUpon>UC_Users.vb</DependentUpon>
     </Compile>
@@ -251,6 +275,18 @@
       <LastGenOutput>Resources.Designer.vb</LastGenOutput>
       <CustomToolNamespace>My.Resources</CustomToolNamespace>
       <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UC_DeliveryPool.resx">
+      <DependentUpon>UC_DeliveryPool.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UC_Marketplace.resx">
+      <DependentUpon>UC_Marketplace.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UC_OrderDetails.resx">
+      <DependentUpon>UC_OrderDetails.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UC_RunnerPool.resx">
+      <DependentUpon>UC_RunnerPool.vb</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="UC_Users.resx">
       <DependentUpon>UC_Users.vb</DependentUpon>
