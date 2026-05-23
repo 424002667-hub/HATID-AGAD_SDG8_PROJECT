@@ -4,3 +4,12 @@
 *.user
 .vs/
 /CODE/HatidApp/HatidApp/bin/Debug/HatidDB.mdf
+/.vs/slnx.sqlite
+/.vs/VSWorkspaceState.json
+/CODE/HatidApp/HatidApp/bin/Debug/HatidApp.exe
+/CODE/HatidApp/HatidApp/bin/Debug/HatidApp.pdb
+/CODE/HatidApp/HatidApp/bin/Debug/HatidDB_log.ldf
+/CODE/HatidApp/HatidApp/obj/Debug/HatidApp.exe
+/CODE/HatidApp/HatidApp/obj/Debug/HatidApp.pdb
+/CODE/HatidApp/HatidApp/obj/Debug/HatidApp.vbproj.GenerateResource.cache
+/CODE/HatidApp/HatidApp/HatidDB_log.ldf
