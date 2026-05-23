@@ -244,7 +244,9 @@
     <Compile Include="UC_OrderDetails.Designer.vb">
       <DependentUpon>UC_OrderDetails.vb</DependentUpon>
     </Compile>
-    <Compile Include="UC_OrderDetails.vb" />
+    <Compile Include="UC_OrderDetails.vb">
+      <SubType>UserControl</SubType>
+    </Compile>
     <Compile Include="UC_RunnerPool.Designer.vb">
       <DependentUpon>UC_RunnerPool.vb</DependentUpon>
     </Compile>
