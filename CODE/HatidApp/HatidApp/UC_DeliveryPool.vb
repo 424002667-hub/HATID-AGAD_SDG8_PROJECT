@@ -7,7 +7,8 @@ Public Class UC_DeliveryPool
     ' Loads the open requests table
     Public Sub LoadDeliveryPool()
         Try
-            Using conn As New SqlConnection(connStr)
+            ' Use the absolute path to ensure you are writing to the file you can see in Server Explorer
+            Using conn As New SqlConnection("Data Source=(LocalDB)\MSSQLLocalDB;AttachDbFilename=C:\HATID-AGAD_SDG8_PROJECT\CODE\HatidApp\HatidApp\HatidDB.mdf;Integrated Security=True")
                 ' We added SealCode here so the database knows exactly what to look for
                 Dim query As String = "SELECT RequestID AS [ID], FoodRequest AS [Order], DeliveryFee AS [Fee (₱)], DropoffLocation AS [Deliver To] FROM [DeliveryPool] WHERE RunnerStatus = 'Pending' ORDER BY RequestID DESC"
 
@@ -65,8 +66,12 @@ Public Class UC_DeliveryPool
                     LoadDeliveryPool()
                 End Using
             End Using
+        Catch ex As SqlException
+            ' This catches database-specific errors (like missing columns or constraint violations)
+            MessageBox.Show("SQL Error: " & ex.Number & " - " & ex.Message, "Database Constraint Error", MessageBoxButtons.OK, MessageBoxIcon.Error)
         Catch ex As Exception
-            MessageBox.Show("Database Error: " & ex.Message, "System Error", MessageBoxButtons.OK, MessageBoxIcon.Error)
+            ' This catches general application errors
+            MessageBox.Show("General Error: " & ex.Message, "System Error", MessageBoxButtons.OK, MessageBoxIcon.Error)
         End Try
     End Sub
 End Class

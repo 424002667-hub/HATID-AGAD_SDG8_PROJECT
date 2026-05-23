@@ -1,9 +1,9 @@
-﻿<Global.Microsoft.VisualBasic.CompilerServices.DesignerGenerated()> _
+﻿<Global.Microsoft.VisualBasic.CompilerServices.DesignerGenerated()>
 Partial Class FrmDashboard
     Inherits System.Windows.Forms.Form
 
     'Form overrides dispose to clean up the component list.
-    <System.Diagnostics.DebuggerNonUserCode()> _
+    <System.Diagnostics.DebuggerNonUserCode()>
     Protected Overrides Sub Dispose(ByVal disposing As Boolean)
         Try
             If disposing AndAlso components IsNot Nothing Then
@@ -20,7 +20,7 @@ Partial Class FrmDashboard
     'NOTE: The following procedure is required by the Windows Form Designer
     'It can be modified using the Windows Form Designer.  
     'Do not modify it using the code editor.
-    <System.Diagnostics.DebuggerStepThrough()> _
+    <System.Diagnostics.DebuggerStepThrough()>
     Private Sub InitializeComponent()
         Me.components = New System.ComponentModel.Container()
         Me.pnlSidebar = New System.Windows.Forms.Panel()
@@ -62,8 +62,9 @@ Partial Class FrmDashboard
         Me.pnlSidebar.Controls.Add(Me.Label1)
         Me.pnlSidebar.Dock = System.Windows.Forms.DockStyle.Left
         Me.pnlSidebar.Location = New System.Drawing.Point(0, 0)
+        Me.pnlSidebar.Margin = New System.Windows.Forms.Padding(2)
         Me.pnlSidebar.Name = "pnlSidebar"
-        Me.pnlSidebar.Size = New System.Drawing.Size(208, 703)
+        Me.pnlSidebar.Size = New System.Drawing.Size(156, 571)
         Me.pnlSidebar.TabIndex = 0
         '
         'btnNavRunner
@@ -71,9 +72,10 @@ Partial Class FrmDashboard
         Me.btnNavRunner.BackColor = System.Drawing.Color.Gold
         Me.btnNavRunner.FlatStyle = System.Windows.Forms.FlatStyle.Flat
         Me.btnNavRunner.ForeColor = System.Drawing.Color.Black
-        Me.btnNavRunner.Location = New System.Drawing.Point(12, 515)
+        Me.btnNavRunner.Location = New System.Drawing.Point(9, 418)
+        Me.btnNavRunner.Margin = New System.Windows.Forms.Padding(2)
         Me.btnNavRunner.Name = "btnNavRunner"
-        Me.btnNavRunner.Size = New System.Drawing.Size(188, 53)
+        Me.btnNavRunner.Size = New System.Drawing.Size(141, 43)
         Me.btnNavRunner.TabIndex = 8
         Me.btnNavRunner.Text = "🚴 Runner Mode"
         Me.btnNavRunner.UseVisualStyleBackColor = False
@@ -83,9 +85,10 @@ Partial Class FrmDashboard
         Me.btnNavMarket.BackColor = System.Drawing.Color.Gold
         Me.btnNavMarket.FlatStyle = System.Windows.Forms.FlatStyle.Flat
         Me.btnNavMarket.ForeColor = System.Drawing.Color.Black
-        Me.btnNavMarket.Location = New System.Drawing.Point(12, 446)
+        Me.btnNavMarket.Location = New System.Drawing.Point(9, 362)
+        Me.btnNavMarket.Margin = New System.Windows.Forms.Padding(2)
         Me.btnNavMarket.Name = "btnNavMarket"
-        Me.btnNavMarket.Size = New System.Drawing.Size(188, 53)
+        Me.btnNavMarket.Size = New System.Drawing.Size(141, 43)
         Me.btnNavMarket.TabIndex = 7
         Me.btnNavMarket.Text = "🛍️ Marketplace"
         Me.btnNavMarket.UseVisualStyleBackColor = False
@@ -95,9 +98,10 @@ Partial Class FrmDashboard
         Me.btnNavVerify.BackColor = System.Drawing.Color.Gold
         Me.btnNavVerify.FlatStyle = System.Windows.Forms.FlatStyle.Flat
         Me.btnNavVerify.ForeColor = System.Drawing.Color.Black
-        Me.btnNavVerify.Location = New System.Drawing.Point(12, 377)
+        Me.btnNavVerify.Location = New System.Drawing.Point(9, 306)
+        Me.btnNavVerify.Margin = New System.Windows.Forms.Padding(2)
         Me.btnNavVerify.Name = "btnNavVerify"
-        Me.btnNavVerify.Size = New System.Drawing.Size(188, 53)
+        Me.btnNavVerify.Size = New System.Drawing.Size(141, 43)
         Me.btnNavVerify.TabIndex = 6
         Me.btnNavVerify.Text = "🔐 Verify Order"
         Me.btnNavVerify.UseVisualStyleBackColor = False
@@ -107,9 +111,10 @@ Partial Class FrmDashboard
         Me.btnNavPool.BackColor = System.Drawing.Color.Gold
         Me.btnNavPool.FlatStyle = System.Windows.Forms.FlatStyle.Flat
         Me.btnNavPool.ForeColor = System.Drawing.Color.Black
-        Me.btnNavPool.Location = New System.Drawing.Point(12, 306)
+        Me.btnNavPool.Location = New System.Drawing.Point(9, 249)
+        Me.btnNavPool.Margin = New System.Windows.Forms.Padding(2)
         Me.btnNavPool.Name = "btnNavPool"
-        Me.btnNavPool.Size = New System.Drawing.Size(188, 53)
+        Me.btnNavPool.Size = New System.Drawing.Size(141, 43)
         Me.btnNavPool.TabIndex = 5
         Me.btnNavPool.Text = "🚀 Delivery Pool"
         Me.btnNavPool.UseVisualStyleBackColor = False
@@ -119,9 +124,10 @@ Partial Class FrmDashboard
         Me.btnLogout.BackColor = System.Drawing.Color.Gold
         Me.btnLogout.FlatStyle = System.Windows.Forms.FlatStyle.Flat
         Me.btnLogout.ForeColor = System.Drawing.Color.Red
-        Me.btnLogout.Location = New System.Drawing.Point(12, 653)
+        Me.btnLogout.Location = New System.Drawing.Point(9, 531)
+        Me.btnLogout.Margin = New System.Windows.Forms.Padding(2)
         Me.btnLogout.Name = "btnLogout"
-        Me.btnLogout.Size = New System.Drawing.Size(136, 38)
+        Me.btnLogout.Size = New System.Drawing.Size(102, 31)
         Me.btnLogout.TabIndex = 4
         Me.btnLogout.Text = "🚪 Log Out"
         Me.btnLogout.UseVisualStyleBackColor = False
@@ -131,9 +137,10 @@ Partial Class FrmDashboard
         Me.btnViewUsers.BackColor = System.Drawing.Color.Gold
         Me.btnViewUsers.FlatStyle = System.Windows.Forms.FlatStyle.Flat
         Me.btnViewUsers.ForeColor = System.Drawing.Color.Black
-        Me.btnViewUsers.Location = New System.Drawing.Point(12, 233)
+        Me.btnViewUsers.Location = New System.Drawing.Point(9, 189)
+        Me.btnViewUsers.Margin = New System.Windows.Forms.Padding(2)
         Me.btnViewUsers.Name = "btnViewUsers"
-        Me.btnViewUsers.Size = New System.Drawing.Size(188, 53)
+        Me.btnViewUsers.Size = New System.Drawing.Size(141, 43)
         Me.btnViewUsers.TabIndex = 3
         Me.btnViewUsers.Text = "👥 Registered Users"
         Me.btnViewUsers.UseVisualStyleBackColor = False
@@ -143,9 +150,10 @@ Partial Class FrmDashboard
         Me.btnHome.BackColor = System.Drawing.Color.Gold
         Me.btnHome.FlatStyle = System.Windows.Forms.FlatStyle.Flat
         Me.btnHome.ForeColor = System.Drawing.Color.Black
-        Me.btnHome.Location = New System.Drawing.Point(12, 157)
+        Me.btnHome.Location = New System.Drawing.Point(9, 128)
+        Me.btnHome.Margin = New System.Windows.Forms.Padding(2)
         Me.btnHome.Name = "btnHome"
-        Me.btnHome.Size = New System.Drawing.Size(188, 53)
+        Me.btnHome.Size = New System.Drawing.Size(141, 43)
         Me.btnHome.TabIndex = 2
         Me.btnHome.Text = "🏠 Home"
         Me.btnHome.UseVisualStyleBackColor = False
@@ -154,9 +162,10 @@ Partial Class FrmDashboard
         '
         Me.lblWelcome.AutoSize = True
         Me.lblWelcome.ForeColor = System.Drawing.Color.LightGray
-        Me.lblWelcome.Location = New System.Drawing.Point(44, 63)
+        Me.lblWelcome.Location = New System.Drawing.Point(33, 51)
+        Me.lblWelcome.Margin = New System.Windows.Forms.Padding(2, 0, 2, 0)
         Me.lblWelcome.Name = "lblWelcome"
-        Me.lblWelcome.Size = New System.Drawing.Size(103, 16)
+        Me.lblWelcome.Size = New System.Drawing.Size(83, 13)
         Me.lblWelcome.TabIndex = 1
         Me.lblWelcome.Text = "Welcome, User!"
         '
@@ -165,9 +174,10 @@ Partial Class FrmDashboard
         Me.Label1.AutoSize = True
         Me.Label1.Font = New System.Drawing.Font("Segoe UI", 13.8!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Label1.ForeColor = System.Drawing.Color.White
-        Me.Label1.Location = New System.Drawing.Point(22, 32)
+        Me.Label1.Location = New System.Drawing.Point(16, 26)
+        Me.Label1.Margin = New System.Windows.Forms.Padding(2, 0, 2, 0)
         Me.Label1.Name = "Label1"
-        Me.Label1.Size = New System.Drawing.Size(157, 31)
+        Me.Label1.Size = New System.Drawing.Size(132, 25)
         Me.Label1.TabIndex = 0
         Me.Label1.Text = "HATID-AGAD"
         '
@@ -178,26 +188,29 @@ Partial Class FrmDashboard
         Me.pnlTopBar.Controls.Add(Me.lblTime)
         Me.pnlTopBar.Controls.Add(Me.lblSectionTitle)
         Me.pnlTopBar.Dock = System.Windows.Forms.DockStyle.Top
-        Me.pnlTopBar.Location = New System.Drawing.Point(208, 0)
+        Me.pnlTopBar.Location = New System.Drawing.Point(156, 0)
+        Me.pnlTopBar.Margin = New System.Windows.Forms.Padding(2)
         Me.pnlTopBar.Name = "pnlTopBar"
-        Me.pnlTopBar.Size = New System.Drawing.Size(805, 60)
+        Me.pnlTopBar.Size = New System.Drawing.Size(604, 49)
         Me.pnlTopBar.TabIndex = 1
         '
         'lblDate
         '
         Me.lblDate.AutoSize = True
-        Me.lblDate.Location = New System.Drawing.Point(511, 32)
+        Me.lblDate.Location = New System.Drawing.Point(383, 26)
+        Me.lblDate.Margin = New System.Windows.Forms.Padding(2, 0, 2, 0)
         Me.lblDate.Name = "lblDate"
-        Me.lblDate.Size = New System.Drawing.Size(79, 16)
+        Me.lblDate.Size = New System.Drawing.Size(63, 13)
         Me.lblDate.TabIndex = 2
         Me.lblDate.Text = "Date Today"
         '
         'lblTime
         '
         Me.lblTime.AutoSize = True
-        Me.lblTime.Location = New System.Drawing.Point(512, 13)
+        Me.lblTime.Location = New System.Drawing.Point(384, 11)
+        Me.lblTime.Margin = New System.Windows.Forms.Padding(2, 0, 2, 0)
         Me.lblTime.Name = "lblTime"
-        Me.lblTime.Size = New System.Drawing.Size(78, 16)
+        Me.lblTime.Size = New System.Drawing.Size(68, 13)
         Me.lblTime.TabIndex = 1
         Me.lblTime.Text = "00:00:00 AM"
         '
@@ -205,9 +218,10 @@ Partial Class FrmDashboard
         '
         Me.lblSectionTitle.AutoSize = True
         Me.lblSectionTitle.Font = New System.Drawing.Font("Segoe UI", 13.8!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.lblSectionTitle.Location = New System.Drawing.Point(22, 13)
+        Me.lblSectionTitle.Location = New System.Drawing.Point(16, 11)
+        Me.lblSectionTitle.Margin = New System.Windows.Forms.Padding(2, 0, 2, 0)
         Me.lblSectionTitle.Name = "lblSectionTitle"
-        Me.lblSectionTitle.Size = New System.Drawing.Size(236, 31)
+        Me.lblSectionTitle.Size = New System.Drawing.Size(197, 25)
         Me.lblSectionTitle.TabIndex = 0
         Me.lblSectionTitle.Text = "Dashboard Overview"
         '
@@ -216,9 +230,10 @@ Partial Class FrmDashboard
         Me.pnlMainContent.BackColor = System.Drawing.Color.White
         Me.pnlMainContent.Controls.Add(Me.pnlCardUsers)
         Me.pnlMainContent.Dock = System.Windows.Forms.DockStyle.Fill
-        Me.pnlMainContent.Location = New System.Drawing.Point(208, 60)
+        Me.pnlMainContent.Location = New System.Drawing.Point(156, 49)
+        Me.pnlMainContent.Margin = New System.Windows.Forms.Padding(2)
         Me.pnlMainContent.Name = "pnlMainContent"
-        Me.pnlMainContent.Size = New System.Drawing.Size(805, 643)
+        Me.pnlMainContent.Size = New System.Drawing.Size(604, 522)
         Me.pnlMainContent.TabIndex = 2
         '
         'pnlCardUsers
@@ -226,18 +241,20 @@ Partial Class FrmDashboard
         Me.pnlCardUsers.BackColor = System.Drawing.Color.LightSteelBlue
         Me.pnlCardUsers.Controls.Add(Me.lblTotalUsersCount)
         Me.pnlCardUsers.Controls.Add(Me.Label2)
-        Me.pnlCardUsers.Location = New System.Drawing.Point(28, 41)
+        Me.pnlCardUsers.Location = New System.Drawing.Point(21, 24)
+        Me.pnlCardUsers.Margin = New System.Windows.Forms.Padding(2)
         Me.pnlCardUsers.Name = "pnlCardUsers"
-        Me.pnlCardUsers.Size = New System.Drawing.Size(240, 120)
+        Me.pnlCardUsers.Size = New System.Drawing.Size(180, 98)
         Me.pnlCardUsers.TabIndex = 0
         '
         'lblTotalUsersCount
         '
         Me.lblTotalUsersCount.AutoSize = True
         Me.lblTotalUsersCount.Font = New System.Drawing.Font("Segoe UI", 24.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.lblTotalUsersCount.Location = New System.Drawing.Point(4, 33)
+        Me.lblTotalUsersCount.Location = New System.Drawing.Point(3, 27)
+        Me.lblTotalUsersCount.Margin = New System.Windows.Forms.Padding(2, 0, 2, 0)
         Me.lblTotalUsersCount.Name = "lblTotalUsersCount"
-        Me.lblTotalUsersCount.Size = New System.Drawing.Size(46, 54)
+        Me.lblTotalUsersCount.Size = New System.Drawing.Size(38, 45)
         Me.lblTotalUsersCount.TabIndex = 1
         Me.lblTotalUsersCount.Text = "0"
         '
@@ -245,9 +262,10 @@ Partial Class FrmDashboard
         '
         Me.Label2.AutoSize = True
         Me.Label2.Font = New System.Drawing.Font("Segoe UI", 10.2!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label2.Location = New System.Drawing.Point(4, 4)
+        Me.Label2.Location = New System.Drawing.Point(3, 3)
+        Me.Label2.Margin = New System.Windows.Forms.Padding(2, 0, 2, 0)
         Me.Label2.Name = "Label2"
-        Me.Label2.Size = New System.Drawing.Size(177, 23)
+        Me.Label2.Size = New System.Drawing.Size(144, 19)
         Me.Label2.TabIndex = 0
         Me.Label2.Text = "Total Registered Users"
         '
@@ -258,12 +276,13 @@ Partial Class FrmDashboard
         '
         'FrmDashboard
         '
-        Me.AutoScaleDimensions = New System.Drawing.SizeF(8.0!, 16.0!)
+        Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
-        Me.ClientSize = New System.Drawing.Size(1013, 703)
+        Me.ClientSize = New System.Drawing.Size(760, 571)
         Me.Controls.Add(Me.pnlMainContent)
         Me.Controls.Add(Me.pnlTopBar)
         Me.Controls.Add(Me.pnlSidebar)
+        Me.Margin = New System.Windows.Forms.Padding(2)
         Me.Name = "FrmDashboard"
         Me.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen
         Me.Text = "Hatid-Agad Dashboard"

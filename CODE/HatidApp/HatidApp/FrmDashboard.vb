@@ -2,12 +2,12 @@
 
 Public Class FrmDashboard
     ' Points directly to your database file automatically
-    Private connStr As String = "Data Source=(LocalDB)\MSSQLLocalDB;AttachDbFilename=|DataDirectory|\HatidDB.mdf;Integrated Security=True"
+    Private connStr As String = "Data Source=(LocalDB)\MSSQLLocalDB;AttachDbFilename=C:\HATID-AGAD_SDG8_PROJECT\CODE\HatidApp\HatidApp\HatidDB.mdf;Integrated Security=True"
 
-    ' This variable stores the username passed from your Login Form
+    ' These variables store the information passed from the Login Form
     Public Property LoggedInUser As String = "User"
-    ' This variable stores the role passed from the Login Form
     Public Property UserRole As String
+    Public Property LoggedInStudentID As String
 
     ' Helper method to cleanly switch custom views into the main content panel workspace
     Private Sub SwitchControl(ByVal uc As UserControl)
@@ -20,7 +20,7 @@ Public Class FrmDashboard
     Private Sub FrmDashboard_Load(sender As Object, e As EventArgs) Handles MyBase.Load
         ' Set the welcome message
         lblWelcome.Text = "Welcome, " & LoggedInUser
-
+        AppDomain.CurrentDomain.SetData("DataDirectory", "C:\HATID-AGAD_SDG8_PROJECT\CODE\HatidApp\HatidApp")
         ' Initialize the clock
         lblTime.Text = DateTime.Now.ToString("hh:mm:ss tt")
         lblDate.Text = DateTime.Now.ToString("dddd, MMMM dd, yyyy")
@@ -42,17 +42,15 @@ Public Class FrmDashboard
 
     ' 3. Count Total Registered Students from HatidDB.mdf
     Public Sub LoadDashboardStats()
+        Dim query As String = "SELECT COUNT(*) FROM [User] WHERE AccountStatus = 'Active'"
+
         Using conn As New SqlConnection(connStr)
-            Try
-                conn.Open()
-                Dim queryUsers As String = "SELECT COUNT(*) FROM [User]"
-                Using cmd As New SqlCommand(queryUsers, conn)
-                    Dim totalUsers As Integer = Convert.ToInt32(cmd.ExecuteScalar())
-                    lblTotalUsersCount.Text = totalUsers.ToString()
-                End Using
-            Catch ex As Exception
-                MessageBox.Show("Could not sync live stats: " & ex.Message, "Database Info", MessageBoxButtons.OK, MessageBoxIcon.Information)
-            End Try
+            conn.Open()
+            Using cmd As New SqlCommand(query, conn)
+                Dim count As Integer = Convert.ToInt32(cmd.ExecuteScalar())
+                ' Update your label/text control here
+                lblTotalUsersCount.Text = count.ToString()
+            End Using
         End Using
     End Sub
 

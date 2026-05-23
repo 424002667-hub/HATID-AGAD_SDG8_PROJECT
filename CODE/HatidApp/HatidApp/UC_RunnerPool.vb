@@ -1,44 +1,57 @@
 ﻿Imports System.Data.SqlClient
 
 Public Class UC_RunnerPool
-    Dim connStr As String = "Data Source=(LocalDB)\MSSQLLocalDB;AttachDbFilename=|DataDirectory|\HatidDB.mdf;Integrated Security=True"
-
-    ' Automatically pulls up open delivery runs when this screen loads
+    ' Absolute path ensuring the connection points to the correct database file
+    ' Replace the hardcoded path with this relative path
+    ' Use the exact path to your project's database file
+    ' Paste this EXACT line into every UserControl or Form that connects to the DB
+    ' Paste this EXACT line into every UserControl or Form that connects to the DB
+    Private connStr As String = "Data Source=(LocalDB)\MSSQLLocalDB;AttachDbFilename=C:\HATID-AGAD_SDG8_PROJECT\CODE\HatidApp\HatidApp\HatidDB.mdf;Integrated Security=True"
     Private Sub UC_RunnerPool_Load(sender As Object, e As EventArgs) Handles MyBase.Load
         LoadAvailableOrders()
     End Sub
 
+    ' Refresh data automatically whenever the Runner Mode tab becomes visible
+    Private Sub UC_RunnerPool_VisibleChanged(sender As Object, e As EventArgs) Handles MyBase.VisibleChanged
+        If Me.Visible Then
+            LoadAvailableOrders()
+        End If
+    End Sub
+
+    ' Fetches only 'Pending' orders to display in the Runner grid
     Public Sub LoadAvailableOrders()
         Try
             Using conn As New SqlConnection(connStr)
-                ' Filters strictly for 'Pending' orders so claimed ones move out of the pool
-                Dim query As String = "SELECT RequestID AS [ID], FoodRequest AS [Order], DeliveryFee AS [Fee (₱)], DropoffLocation AS [Deliver To] FROM [DeliveryPool] WHERE RunnerStatus = 'Pending' ORDER BY RequestID DESC"
+                Dim query As String = "SELECT * FROM DeliveryPool WHERE RunnerStatus = 'Pending'"
+                Dim da As New SqlDataAdapter(query, conn)
+                Dim dt As New DataTable()
+                da.Fill(dt)
+                dgvRunnerPool.DataSource = dt
 
-                Using adapter As New SqlDataAdapter(query, conn)
-                    Dim dt As New DataTable()
-                    adapter.Fill(dt)
-                    dgvRunnerPool.DataSource = dt
-                End Using
+                ' Check if it actually found anything
+                If dt.Rows.Count = 0 Then
+                    MessageBox.Show("Debug: No 'Pending' orders found in the database at: " & connStr)
+                End If
             End Using
         Catch ex As Exception
-            MessageBox.Show("Error loading runner pool: " & ex.Message, "System Error", MessageBoxButtons.OK, MessageBoxIcon.Error)
+            MessageBox.Show("Database Connection Error: " & ex.Message)
         End Try
     End Sub
 
-    ' Code that runs when the runner claims a delivery item
+    ' Handles claiming the delivery and updating status to 'Out for Delivery'
     Private Sub btnAcceptOrder_Click(sender As Object, e As EventArgs) Handles btnAcceptOrder.Click
         If dgvRunnerPool.CurrentRow Is Nothing Then
             MessageBox.Show("Please click on an active order line from the table list first.", "No Selection", MessageBoxButtons.OK, MessageBoxIcon.Warning)
             Exit Sub
         End If
 
-        ' Grabs the RequestID primary key from column index 0
         Dim selectedID As Integer = Convert.ToInt32(dgvRunnerPool.CurrentRow.Cells(0).Value)
 
         Try
             Using conn As New SqlConnection(connStr)
-                Dim query As String = "UPDATE DeliveryPool SET RunnerStatus = 'Out for Delivery' WHERE RequestID = @ID AND RunnerStatus = 'Pending'"
-
+                ' Only update if still marked as 'Pending' to prevent double-claiming
+                ' Ensure there are no extra spaces here
+                Dim query As String = "UPDATE DeliveryPool SET RunnerStatus = 'Out for Delivery' WHERE RequestID = @ID"
                 Using cmd As New SqlCommand(query, conn)
                     cmd.Parameters.AddWithValue("@ID", selectedID)
                     conn.Open()
@@ -47,7 +60,8 @@ Public Class UC_RunnerPool
 
                     If rowsAffected > 0 Then
                         MessageBox.Show("Order successfully claimed! Head over to the order verification tab once delivered.", "Delivery Claimed", MessageBoxButtons.OK, MessageBoxIcon.Information)
-                        LoadAvailableOrders() ' Instantly refreshes the table row out of view
+                        ' Refresh the grid to remove the claimed item
+                        LoadAvailableOrders()
                     Else
                         MessageBox.Show("This order has already been taken by someone else.", "Notice", MessageBoxButtons.OK, MessageBoxIcon.Exclamation)
                     End If

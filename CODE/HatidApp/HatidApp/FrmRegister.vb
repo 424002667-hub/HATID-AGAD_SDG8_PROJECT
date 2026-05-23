@@ -1,8 +1,8 @@
 ﻿Imports System.Data.SqlClient
 
 Public Class FrmRegister
-    Dim connStr As String = "Data Source=(LocalDB)\MSSQLLocalDB;AttachDbFilename=|DataDirectory|\HatidDB.mdf;Integrated Security=True"
-
+    ' Use the exact same absolute path as in FrmLogin.vb
+    Dim connStr As String = "Data Source=(LocalDB)\MSSQLLocalDB;AttachDbFilename=C:\HATID-AGAD_SDG8_PROJECT\CODE\HatidApp\HatidApp\HatidDB.mdf;Integrated Security=True"
     Private Sub btnRegister_Click(sender As Object, e As EventArgs) Handles btnRegister.Click
         Dim query As String = "INSERT INTO [User] (StudentID, Password, FullName, AccountStatus, UserRole) VALUES (@ID, @Pass, @Name, 'Active', 'Student')"
 
@@ -31,5 +31,15 @@ Public Class FrmRegister
         Catch ex As Exception
             MessageBox.Show("Registration Error: " & ex.Message)
         End Try
+    End Sub
+
+    Private Sub btnBack_Click(sender As Object, e As EventArgs) Handles btnBack.Click
+        Me.Hide()
+        ' Show the login form
+        FrmLogin.Show()
+    End Sub
+
+    Private Sub FrmRegister_Load(sender As Object, e As EventArgs) Handles MyBase.Load
+
     End Sub
 End Class
