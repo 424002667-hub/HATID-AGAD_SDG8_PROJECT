@@ -17,3 +17,13 @@ If you encounter a "database not found" error, ensure that:
 * The SQL Server instance is running.
 * You have successfully executed the `Database_Script.sql` file.
 * The connection string in `App.config` matches your SQL Server instance name (e.g., `.\SQLEXPRESS` or `(localdb)\MSSQLLocalDB`).
+
+If you encounter Error MSB3030 when building the project, it means Visual Studio is trying to locate a missing database file. To fix this:
+
+Open the Solution Explorer in Visual Studio.
+
+Locate HatidDB.mdf (it may have a warning icon).
+
+Right-click the file and select Exclude from Project.
+
+Click Build > Rebuild Solution to resolve the error.
